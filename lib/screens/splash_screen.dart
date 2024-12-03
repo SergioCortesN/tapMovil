@@ -10,16 +10,16 @@ class SplashScreen extends StatelessWidget {
     return EasySplashScreen(
       logo: Image.asset('assets/raikou.png'),
       logoWidth: 100,
-      title: Text('Bienvenidos a mi App',
+      title: const Text('Bienvenidos a mi App',
         style: TextStyle(fontFamily: 'poke'),
         ),
       showLoader: true,
-      loadingText: Text('Cargando App...',
+      loadingText: const Text('Cargando App...',
       style: TextStyle(fontFamily: 'poke')
       ),
       navigator: LoginScreen(),
       durationInSeconds: 3,
-      gradientBackground: LinearGradient(
+      gradientBackground: const LinearGradient(
         begin: Alignment.topCenter,
         end: Alignment.bottomLeft,
         colors: [

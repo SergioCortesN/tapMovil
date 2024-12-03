@@ -5,7 +5,7 @@ import 'package:tap2024/challenge/hero_model.dart';
 class HeroDetailsPage extends StatefulWidget {
   final HeroModel hero;
 
-  const HeroDetailsPage(this.hero);
+  const HeroDetailsPage(this.hero, {super.key});
 
   @override
   _HeroDetailsPageState createState() => _HeroDetailsPageState();
@@ -20,7 +20,7 @@ class _HeroDetailsPageState extends State<HeroDetailsPage> {
 
   @override
   void initState() {
-    _scrollController = new ScrollController();
+    _scrollController = ScrollController();
     _scrollController.addListener(() {
       setState(() {
         if (_scrollController.offset <= appBarHeight) {
@@ -39,6 +39,16 @@ class _HeroDetailsPageState extends State<HeroDetailsPage> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color.fromARGB(255, 255, 174, 22),
+              Color.fromARGB(255, 170, 0, 60),
+            ],
+            begin: Alignment(0.3, -1),
+            end: Alignment(-0.8, 1),
+          ),
+        ),
         child: Stack(
           children: [
             ListView(
@@ -177,16 +187,6 @@ class _HeroDetailsPageState extends State<HeroDetailsPage> {
             ),
           ],
         ),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color.fromARGB(255, 255, 174, 22),
-              Color.fromARGB(255, 170, 0, 60),
-            ],
-            begin: Alignment(0.3, -1),
-            end: Alignment(-0.8, 1),
-          ),
-        ),
       ),
     );
   }
@@ -209,6 +209,7 @@ class _HeroDetailsImage extends StatelessWidget {
           child: Stack(
             children: [
               Align(
+                alignment: Alignment.bottomCenter,
                 child: Container(
                   margin: EdgeInsets.only(
                     left: 16,
@@ -220,9 +221,9 @@ class _HeroDetailsImage extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(28)),
                   ),
                 ),
-                alignment: Alignment.bottomCenter,
               ),
               Align(
+                alignment: Alignment.bottomCenter,
                 child: Container(
                   margin: EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
@@ -230,9 +231,9 @@ class _HeroDetailsImage extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(28)),
                   ),
                 ),
-                alignment: Alignment.bottomCenter,
               ),
               Align(
+                alignment: Alignment.bottomCenter,
                 child: Container(
                   margin: EdgeInsets.only(
                     bottom: 16,
@@ -251,7 +252,6 @@ class _HeroDetailsImage extends StatelessWidget {
                     ),
                   ),
                 ),
-                alignment: Alignment.bottomCenter,
               ),
             ],
           ),
@@ -270,7 +270,7 @@ class _HeroDetailsName extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: EdgeInsets.only(top: 8),
+      margin: const EdgeInsets.only(top: 8),
       height: 86,
       child: Stack(
         children: [
@@ -278,7 +278,7 @@ class _HeroDetailsName extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             child: Text(
               heroName,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 42,

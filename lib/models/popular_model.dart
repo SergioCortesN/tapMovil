@@ -6,13 +6,13 @@ class PopularModel {
   String overview;
   double popularity;
   String posterPath;
-  DateTime releaseDate;
+  String releaseDate;
   String title;
-  bool video;
   double voteAverage;
   int voteCount;
 
-  PopularModel({
+  
+PopularModel({
     required this.backdropPath,
     required this.id,
     required this.originalLanguage,
@@ -22,9 +22,25 @@ class PopularModel {
     required this.posterPath,
     required this.releaseDate,
     required this.title,
-    required this.video,
     required this.voteAverage,
     required this.voteCount,
   });
+
+  factory PopularModel.fromMap(Map<String, dynamic> map){
+    return PopularModel(
+      backdropPath: map['backdrop_path'], 
+      id: map['id'], 
+      originalLanguage: map['original_language'], 
+      originalTitle: map['original_title'], 
+      overview: map['overview'], 
+      popularity: map['popularity'], 
+      posterPath: map['poster_path'], 
+      releaseDate: map['release_date'], 
+      title: map['title'], 
+      voteAverage: map['vote_average'], 
+      voteCount: map['vote_count']
+      );
+      
+  }
 
 }

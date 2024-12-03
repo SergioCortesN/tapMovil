@@ -9,7 +9,7 @@ class DashboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  Text('TAP AGOS-DIC 2024',
+        title:  const Text('TAP AGOS-DIC 2024',
           style: TextStyle(fontFamily: 'poke'),
           ),
       ),
@@ -21,7 +21,7 @@ class DashboardScreen extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: [
-          UserAccountsDrawerHeader(
+          const UserAccountsDrawerHeader(
             currentAccountPicture: CircleAvatar(
               backgroundImage: AssetImage('assets/perfil.png'),
             ),
@@ -32,29 +32,29 @@ class DashboardScreen extends StatelessWidget {
             onTap: () {
               Navigator.pushNamed(context, '/chal');
             } ,
-            title: Text('Practica 1'),
-            subtitle: Text('Challenge'),
-            leading: Icon(Icons.code),
-            trailing: Icon(Icons.chevron_right),
+            title: const Text('Practica 1'),
+            subtitle: const Text('Challenge'),
+            leading: const Icon(Icons.code),
+            trailing: const Icon(Icons.chevron_right),
             onLongPress: () {
               
             },
           ),
           ListTile(
-            onTap: () {},
-            title: Text('Popular Movies'),
-            subtitle: Text('Test API'),
-            leading: Icon(Icons.movie),
-            trailing: Icon(Icons.chevron_right),
+            onTap: ()=>Navigator.pushNamed(context,'/movie'),
+            title: const Text('Popular Movies'),
+            subtitle: const Text('Test API'),
+            leading: const Icon(Icons.movie),
+            trailing: const Icon(Icons.chevron_right),
           ),
           ListTile(
             onTap: () {
               Navigator.pop(context);
               Navigator.pop(context);
             },
-            title: Text('Salir'),
-            leading: Icon(Icons.exit_to_app),
-            trailing: Icon(Icons.chevron_right),
+            title: const Text('Salir'),
+            leading: const Icon(Icons.exit_to_app),
+            trailing: const Icon(Icons.chevron_right),
           ),
           
           DayNightSwitcher(

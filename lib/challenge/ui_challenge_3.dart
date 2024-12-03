@@ -6,6 +6,8 @@ import 'hero_model.dart';
 import 'hero_widget.dart';
 
 class UiChallenge3 extends StatefulWidget {
+  const UiChallenge3({super.key});
+
   @override
   _UiChallenge3State createState() => _UiChallenge3State();
 }
@@ -17,7 +19,7 @@ class _UiChallenge3State extends State<UiChallenge3> {
 
   @override
   void initState() {
-    _scrollController = new ScrollController();
+    _scrollController = ScrollController();
     _scrollController.addListener(() {
       setState(() {
         if (_scrollController.offset <= 80) {
@@ -34,6 +36,17 @@ class _UiChallenge3State extends State<UiChallenge3> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color.fromARGB(255, 158, 1, 1),
+              Color(0xE6FF0000), 
+              Color.fromARGB(255, 158, 1, 1)
+            ],
+            begin: Alignment(0.3, -1),
+            end: Alignment(-0.8, 1),
+          ),
+        ),
         child: Stack(
           children: [
             ListView.builder(
@@ -82,17 +95,6 @@ class _UiChallenge3State extends State<UiChallenge3> {
               ),
             )
           ],
-        ),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color.fromARGB(255, 158, 1, 1),
-              Color(0xE6FF0000), 
-              Color.fromARGB(255, 158, 1, 1)
-            ],
-            begin: Alignment(0.3, -1),
-            end: Alignment(-0.8, 1),
-          ),
         ),
       ),
     );

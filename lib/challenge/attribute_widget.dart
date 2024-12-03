@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
-final String heart = 'challenge/ps.png';
-final String knife = 'challenge/atk.png';
-final String speed = 'challenge/speed.png';
+const String heart = 'challenge/ps.png';
+const String knife = 'challenge/atk.png';
+const String speed = 'challenge/speed.png';
 
 class AttributeWidget extends StatelessWidget {
   final double size;
@@ -46,7 +46,7 @@ class AttributePainter extends CustomPainter {
     this.filledStrokeWidth = 4.0,
         //rueda fondo
   })  : bgPaint = Paint()..color = const Color.fromARGB(255, 217, 255, 0).withOpacity(0.25),
-        strokeBgPaint = Paint()..color = Color.fromARGB(255, 255, 0, 170), //fondo iconos
+        strokeBgPaint = Paint()..color = const Color.fromARGB(255, 255, 0, 170), //fondo iconos
         strokeFilledPaint = Paint()
           ..color = const Color.fromARGB(255, 255, 0, 0) //rueda progreso
           ..style = PaintingStyle.stroke

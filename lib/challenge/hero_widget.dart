@@ -17,20 +17,20 @@ class HeroRowWidget extends StatelessWidget {
   final HeroModel hero;
   final double rowHeight;
 
-  const HeroRowWidget({
+  const HeroRowWidget({super.key, 
     required this.hero,
     this.rowHeight = 282,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: rowHeight,
       child: Stack(
         alignment: Alignment.center,
         children: [
           Transform.translate(
-            offset: Offset(-10, 0),
+            offset: const Offset(-10, 0),
             child: Transform(
               alignment: FractionalOffset.center,
               transform: Matrix4.identity()
@@ -38,16 +38,16 @@ class HeroRowWidget extends StatelessWidget {
                 ..rotateY(radians(1.5)),
               child: Container(
                 height: 216,
-                margin: EdgeInsets.symmetric(horizontal: 40),
+                margin: const EdgeInsets.symmetric(horizontal: 40),
                 decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.1),
-                  borderRadius: BorderRadius.all(Radius.circular(22)),
+                  borderRadius: const BorderRadius.all(Radius.circular(22)),
                 ),
               ),
             ),
           ),
           Transform.translate(
-            offset: Offset(-44, 0),
+            offset: const Offset(-44, 0),
             child: Transform(
               alignment: FractionalOffset.center,
               transform: Matrix4.identity()
@@ -55,10 +55,10 @@ class HeroRowWidget extends StatelessWidget {
                 ..rotateY(radians(8)),
               child: Container(
                 height: 188,
-                margin: EdgeInsets.symmetric(horizontal: 40),
+                margin: const EdgeInsets.symmetric(horizontal: 40),
                 decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.4),
-                  borderRadius: BorderRadius.all(Radius.circular(22)),
+                  borderRadius: const BorderRadius.all(Radius.circular(22)),
                 ),
               ),
             ),
@@ -66,7 +66,7 @@ class HeroRowWidget extends StatelessWidget {
           Row(
             children: [
               Transform.translate(
-                offset: Offset(-30, 0),
+                offset: const Offset(-30, 0),
                 child: Container(
                   child: Hero(
                     tag: hero.name,
@@ -83,8 +83,8 @@ class HeroRowWidget extends StatelessWidget {
           Align(
             alignment: Alignment.centerRight,
             child: Container(
-              margin: EdgeInsets.only(right: 58),
-              padding: EdgeInsets.symmetric(vertical: 34),
+              margin: const EdgeInsets.only(right: 58),
+              padding: const EdgeInsets.symmetric(vertical: 34),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -109,20 +109,13 @@ class HeroRowWidget extends StatelessWidget {
                   SizedBox(
                     height: 32,
                     child: OutlinedButton(
-                      child: new Text(
-                        'See Details',
-                        style: TextStyle(
-                          color: const Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 12,
-                        ),
-                      ),
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                           return HeroDetailsPage(hero);
                         }));
                       },
                       style: OutlinedButton.styleFrom(
-                        foregroundColor: Colors.white, side: BorderSide(
+                        foregroundColor: Colors.white, side: const BorderSide(
                         color: Colors.white, // Color del borde
                         width: 1, // Grosor del borde
                       ),
@@ -130,6 +123,13 @@ class HeroRowWidget extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30.0),
                       ),
                     ),
+                      child: new Text(
+                        'See Details',
+                        style: TextStyle(
+                          color: const Color.fromARGB(255, 255, 255, 255),
+                          fontSize: 12,
+                        ),
+                      ),
                   )
                   )
                 ],

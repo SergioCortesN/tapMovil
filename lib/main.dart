@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tap2024/challenge/ui_challenge_3.dart';
 import 'package:tap2024/screens/dashboard_screen.dart';
+import 'package:tap2024/screens/detail_popular.dart';
+import 'package:tap2024/screens/popular_screen.dart';
 import 'package:tap2024/screens/splash_screen.dart';
 import 'package:tap2024/settings/global_values.dart';
 
@@ -19,9 +21,11 @@ class MyApp extends StatelessWidget {
           title: 'Material App',
           routes: {
             '/dash': (context) => const DashboardScreen(),
-            '/chal': (context) => UiChallenge3()
+            '/chal': (context) => UiChallenge3(),
+            '/movie': (context) => const PopularScreen(),
+            '/detail': (context) => const DetailPopular(),
           },
-          home: SplashScreen()
+          home: const SplashScreen()
         );
       }
     );

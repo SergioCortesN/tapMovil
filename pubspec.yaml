@@ -38,6 +38,9 @@ dependencies:
   easy_splash_screen: ^1.0.4
   day_night_switcher: ^0.2.0+1
   dio: ^5.7.0
+  flutter_rating_bar: ^4.0.1
+  video_player: ^2.9.2
+  youtube_player_flutter: ^8.1.0
 
 dev_dependencies:
   flutter_test:
